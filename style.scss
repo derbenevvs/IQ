@@ -11,18 +11,22 @@
     width: 100%;
     background: rgb(149, 116, 228);
 }
-// .header_bottom {
-//     height: 300px;
-//     width: 100%;  
-//     border: 2px solid red;  
-// }
+.header_bottom {
+    min-height: 100px;
+    width: 100%;  
+    border: 2px solid red;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .center {
     width: 100%;
     min-height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 10px;
+    
 }
 .index_button {
     width: 150px;
@@ -48,4 +52,11 @@
     width: 300px;
     // border: 2px solid rgb(88, 27, 230);
     background: rgb(105, 196, 52);
+ }
+ .questionsTimeTest {
+    height: 50px;
+    width: 100px;
+    border: 2px solid rgb(11, 9, 15);
+    background: rgb(214, 211, 34);
+
  }
