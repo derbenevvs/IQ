@@ -48,6 +48,15 @@
 .index_button {
   width: 150px;
   height: 50px;
+  margin-top: 5px;
+  border: 2px solid red;
+  border-radius: 20px;
+}
+
+.index_button_2 {
+  width: 150px;
+  height: 50px;
+  margin-top: 5px;
   border: 2px solid red;
   border-radius: 20px;
 }
@@ -60,15 +69,41 @@
 }
 
 .centerQuestions {
-  height: 100px;
-  width: 300px;
+  min-height: 100px;
+  min-width: 300px;
   background: #e474c2;
 }
 
 .answersQuestions {
-  height: 100px;
-  width: 300px;
+  min-height: 10px;
+  min-width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   background: #69c434;
+}
+
+.answerCard {
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.answerCardBorder {
+  border: 2px solid red;
+}
+
+.answerCard:first-child {
+  margin-left: 0px;
+}
+
+.answerUserInput {
+  width: 150px;
+  height: 30px;
+  border-radius: 20px;
 }
 
 .questionsTimeTest {
