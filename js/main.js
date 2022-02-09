@@ -2,6 +2,8 @@ let counterQuestions = 0;
 let questionNumber;
 let questionNumberTotal = 7;
 let resultUser = 0;
+let answersMas =[];
+let answersTestMas = [];
 
 let questionNumberRound =() => {questionNumber =Math.round(Math.random() * ((mas.length-1) - 0) + 0) // вставить рандомное значение
 return questionNumber}; 
@@ -14,7 +16,7 @@ startTest();
 questionNumberRound();
 
 let startTest = () => { // Вывод вопроса
-
+  
   // startFunction();
 
   if(mas.length <= 0){
@@ -25,6 +27,9 @@ let startTest = () => { // Вывод вопроса
   questionsTest();
    
   counterQuestions++;
+
+  answersTestMasFunction();
+
   mas.splice(questionNumber, 1);
   questionNumberRound();
 
@@ -46,22 +51,24 @@ document.querySelector(".center").append(answersQuestions);
 
 centerQuestions.innerHTML = mas[questionNumber].questionTest; 
 
+// answersTestMas = mas[questionNumber.answerRight];
+// console.log(answersTestMas);
+
 if(mas[questionNumber].choiceAnswer == false){
     answersQuestions.innerHTML = mas[questionNumber].answerUser;
     // document.querySelector(".center").append(buttonQuestions);
 
     for(let cardAnswer of document.querySelectorAll(".answerCard")){
-    cardAnswer.onclick = borderRed;
+    // cardAnswer.onclick = functionMasResult;
     cardAnswer.addEventListener("mouseenter", borderBlue); // переработать
     cardAnswer.addEventListener("mouseleave", borderBlueNull); // переработать
-
-    cardAnswer.addEventListener("click", startTest);
+     cardAnswer.addEventListener("click", startTest);
+    
     };
     
-
 }else if(mas[questionNumber].choiceAnswer == true){
      
-   answersQuestions.innerHTML = '<input id="numbInput" class="answerUserInput" type="text"><button class="index_button_2" onclick="myFunction(); startTest()">Следующий вопрос</button>';
+   answersQuestions.innerHTML = '<input id="numbInput" class="answerUserInput" type="text"><button class="index_button_2" onclick="functionMasResult(); startTest()">Следующий вопрос</button>';
 };
 
 buttonQuestions.innerHTML = "<p>Следующий вопрос</p>";
@@ -71,15 +78,31 @@ questionsCounter();
 
 };
 
-function myFunction() { // переработать, вставить проверку
-    var x;
-    x = document.getElementById("numbInput").value;
-    console.log(x);
+function functionMasResult(a){ // переработать, вставить проверку
+    var userAnswer;
+    // console.log(a.className);
+    // if(document.querySelector(".answerCard").id == 1){
+      // if(a.className == "answerCard"){
+        if(a != undefined){
+      userAnswer = a.id;
+      // answersMas.push(userAnswer);
+    }else{
+      userAnswer = document.getElementById("numbInput").value; // получает значение из окна input
+    };
+
+    answersMas.push(userAnswer);
+    console.log(answersMas);
 };
 
-function borderRed(){ // красная рамка при клике
-  this.classList.add("answerCardBorder");
+function answersTestMasFunction(){ // формирует массив с правильнымы ответами
+  answersTestMas.push(mas[questionNumber].answerRight);
+  console.log(answersTestMas);
+  return answersTestMas;
 };
+// function borderRed(){ // красная рамка при клике
+//   this.classList.add("answerCardBorder");
+//   functionMasResult();
+// };
 
 function borderBlue(){ // синяя рамка при наведении
   this.classList.add("answerCardBorder_2");
