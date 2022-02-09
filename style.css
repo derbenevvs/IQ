@@ -45,6 +45,10 @@
   margin-top: 10px;
 }
 
+.center .messageUser {
+  color: rgba(235, 8, 8, 0.836);
+}
+
 .index_button {
   width: 150px;
   height: 50px;

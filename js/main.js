@@ -88,6 +88,7 @@ function functionMasResult(a){ // переработать, вставить п�
       // answersMas.push(userAnswer);
     }else{
       userAnswer = document.getElementById("numbInput").value; // получает значение из окна input
+      examinationInput(userAnswer);
     };
 
     answersMas.push(userAnswer);
@@ -99,10 +100,17 @@ function answersTestMasFunction(){ // формирует массив с пра�
   console.log(answersTestMas);
   return answersTestMas;
 };
-// function borderRed(){ // красная рамка при клике
-//   this.classList.add("answerCardBorder");
-//   functionMasResult();
-// };
+
+function examinationInput(b){ // Проверка вводимых значений в окно input
+if(/[0-9]/.test(b) || /[а-я]/.test(b)){
+return;
+}else{
+let messageUser = `<p class="messageUser">Попробуйте еще раз. Введите число!</p>`;
+document.querySelector(".answersQuestions").insertAdjacentHTML('beforeend', messageUser);
+return functionMasResult(a);
+};
+};
+
 
 function borderBlue(){ // синяя рамка при наведении
   this.classList.add("answerCardBorder_2");
