@@ -10,7 +10,7 @@ let questionNumberRound =() => {questionNumber =Math.round(Math.random() * ((mas
 return questionNumber}; 
 
 let startFunction = () => {
-document.querySelector(".index_button").remove()
+document.querySelector(".index_button").remove() //после данной строчки вставить удаление блока с информацией!!!!!!!!!!!!!!!!!
 startTest();
 };
 
@@ -135,13 +135,13 @@ let questionsCounter = () => { // функци с счетчиком вопро�
     document.querySelector(".header").append(headerBottom);
 
     let questionsNumber = document.createElement("div");
-    let timeTest = document.createElement("div");
+    // let timeTest = document.createElement("div");
 
     questionsNumber.classList.add("questionsTimeTest");
-    timeTest.classList.add("questionsTimeTest");
+    // timeTest.classList.add("questionsTimeTest_1");
 
     document.querySelector(".header_bottom").append(questionsNumber);
-    document.querySelector(".header_bottom").append(timeTest);
+    // document.querySelector(".header_bottom").append(timeTest);
 
     questionsNumber.innerHTML = `<p>Вопрос ${counterQuestions+1} из ${questionNumberTotal}</p>`;
 };
@@ -152,7 +152,7 @@ let removalBlock = () => { // Удаляет блоки
     document.querySelector(".centerQuestions").remove();
     document.querySelector(".answersQuestions").remove();
     document.querySelector(".questionsTimeTest").remove();
-    document.querySelector(".questionsTimeTest").remove();
+    // document.querySelector(".questionsTimeTest_1").remove();
     document.querySelector(".header_bottom").remove();
   
     if(document.querySelector(".index_button") != null){
@@ -167,5 +167,11 @@ let resultTotal = () => { // Вывод результата
   let centerQuestions = document.createElement("div");
   centerQuestions.classList.add("centerQuestions");
   document.querySelector(".center").append(centerQuestions);
-  centerQuestions.innerHTML = `<p>${masResult[0].textResult}</p>`; // Внести условие 
+  centerQuestions.innerHTML = `<p>${masResult[0].textResult}</p>`; // Внести условие !!!!!!!!!!!!!!!!!
 };
+
+
+
+// let timeTest = document.createElement("div");
+// timeTest.classList.add("questionsTimeTest_1");
+// document.querySelector(".header_bottom").append(timeTest);
