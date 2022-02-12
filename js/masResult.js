@@ -1,14 +1,14 @@
 let masResult = [
     {
-        textResult: '<p>Привет 1</p>'
+        textResult: '<p>Результат 1</p>'
     },
     {
-        textResult: '<p>Привет 2</p>'
+        textResult: '<p>Результат 2</p>'
     },
     {
-        textResult: '<p>Привет 3</p>'
+        textResult: '<p>Результат 3</p>'
     },
     {
-        textResult: '<p>Привет 4</p>'
+        textResult: '<p>Результат 4</p>'
     },
 ];

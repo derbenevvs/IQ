@@ -1,9 +1,10 @@
 let counterQuestions = 0;
 let questionNumber;
-let questionNumberTotal = 7;
+let questionNumberTotal = mas.length; // количество вопросов
 let resultUser = 0;
-let answersMas =[];
-let answersTestMas = [];
+let resultUserEnd = 0; // количество правильных ответов
+let answersMas =[]; // массив с ответами юзера
+let answersTestMas = []; // массив с правильными ответами
 
 let questionNumberRound =() => {questionNumber =Math.round(Math.random() * ((mas.length-1) - 0) + 0) // вставить рандомное значение
 return questionNumber}; 
@@ -17,9 +18,7 @@ questionNumberRound();
 
 let startTest = () => { // Вывод вопроса
   
-  // startFunction();
-
-  if(mas.length <= 0){
+    if(mas.length <= 0){
     return resultTotal();
   };
 
@@ -78,13 +77,13 @@ questionsCounter();
 
 };
 
-function functionMasResult(a){ // переработать, вставить проверку
+function functionMasResult(meaningInput){ // переработать, вставить проверку
     var userAnswer;
     // console.log(a.className);
     // if(document.querySelector(".answerCard").id == 1){
       // if(a.className == "answerCard"){
-        if(a != undefined){
-      userAnswer = a.id;
+        if(meaningInput != undefined){
+      userAnswer = meaningInput.id;
       // answersMas.push(userAnswer);
     }else{
       userAnswer = document.getElementById("numbInput").value; // получает значение из окна input
@@ -107,10 +106,19 @@ return;
 }else{
 let messageUser = `<p class="messageUser">Попробуйте еще раз. Введите число!</p>`;
 document.querySelector(".answersQuestions").insertAdjacentHTML('beforeend', messageUser);
-return functionMasResult(a);
+return functionMasResult(meaningInput);
 };
 };
 
+function examinationAnswers(){ // функция сравнивает два массива и считает количество правильных ответов
+for(let i = 0; i < questionNumberTotal; i++){
+if(answersTestMas[i] == answersMas[i]){
+  resultUserEnd++;
+};
+resultUserEnd;
+};
+return resultUserEnd;
+};
 
 function borderBlue(){ // синяя рамка при наведении
   this.classList.add("answerCardBorder_2");
@@ -154,7 +162,8 @@ let removalBlock = () => { // Удаляет блоки
 };
 let resultTotal = () => { // Вывод результата
   removalBlock();
-  console.log("Итог!");
+  examinationAnswers()
+  console.log(resultUserEnd);
   let centerQuestions = document.createElement("div");
   centerQuestions.classList.add("centerQuestions");
   document.querySelector(".center").append(centerQuestions);

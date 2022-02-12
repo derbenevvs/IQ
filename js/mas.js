@@ -4,7 +4,7 @@ let mas = [
         questionTest: '<img src="img/1-for women.png">',
         answerUser: '<img id="1" onclick="functionMasResult(this)" class="answerCard" src="img/Rectangle 15 copy (2).png"><img onclick="functionMasResult(this)" class="answerCard" src="img/Rectangle 15 copy (3).png"><img onclick="functionMasResult(this)" class="answerCard" src="img/Rectangle 15 copy (4).png"><img onclick="functionMasResult(this)" class="answerCard" src="img/Rectangle 15 copy.png">',
         choiceAnswer: false,
-        answerRight: 2
+        answerRight: 1
     },
     {
         question: 2,
@@ -32,14 +32,14 @@ let mas = [
         questionTest: '<img src="img/1-for women.png">',
         answerUser: '<img id="1" onclick="functionMasResult(this)" class="answerCard" src="img/Rectangle 15 copy (2).png"><img onclick="functionMasResult(this)" class="answerCard" src="img/Rectangle 15 copy (3).png"><img onclick="functionMasResult(this)" class="answerCard" src="img/Rectangle 15 copy (4).png"><img onclick="functionMasResult(this)" class="answerCard" src="img/Rectangle 15 copy.png">',
         choiceAnswer: false,
-        answerRight: 7
+        answerRight: 1
     },
     {
         question: 6,
         questionTest: '<img src="img/1-for women.png">',
         answerUser: '<img id="1" onclick="functionMasResult(this)" class="answerCard" src="img/Rectangle 15 copy (2).png"><img onclick="functionMasResult(this)" class="answerCard" src="img/Rectangle 15 copy (3).png"><img onclick="functionMasResult(this)" class="answerCard" src="img/Rectangle 15 copy (4).png"><img onclick="functionMasResult(this)" class="answerCard" src="img/Rectangle 15 copy.png">',
         choiceAnswer: false,
-        answerRight: 10
+        answerRight: 1
     },
     {
         question: 7,
@@ -48,4 +48,11 @@ let mas = [
         choiceAnswer: true,
         answerRight: 56
     },
+    {
+        question: 7,
+        questionTest: '<p>Текст вопроса № 4</p>',
+        answerUser: '<input class="answerUserInput" type="text" >',
+        choiceAnswer: true,
+        answerRight: 56
+    }
 ];
