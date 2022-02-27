@@ -101,12 +101,19 @@ function answersTestMasFunction(){ // формирует массив с пра�
 };
 
 function examinationInput(b){ // Проверка вводимых значений в окно input
+  if(document.querySelector(".messageUser") != null){
+    document.querySelector(".messageUser").remove();
+  };
 if(/[0-9]/.test(b) || /[а-я]/.test(b)){
+  
 return;
 }else{
+  // if(document.querySelector(".messageUser") != null){
+  //   document.querySelector(".messageUser").remove();
+  // };
 let messageUser = `<p class="messageUser">Попробуйте еще раз. Введите число!</p>`;
 document.querySelector(".answersQuestions").insertAdjacentHTML('beforeend', messageUser);
-return functionMasResult(meaningInput);
+return functionMasResult(meaningInput); // Выдает ошибку??????????????????????????????????????????????????
 };
 };
 
